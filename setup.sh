@@ -19,22 +19,22 @@ for file in $files; do
         if test -d "$HOME/.$file"; then
             rm -rf "$HOME/.$file"
             echo "Setting Up $file..."
-	    cp -r "$(pwd)/$file" "$HOME/.$file"
+	    ln -s "$(pwd)/$file" "$HOME/"
         fi
         rm -rf "$HOME/.$file"
         echo "Setting Up $file..."
         if [[ "$file" = "$trueline" ]]; then
-            cp -r "$(pwd)/$file" "$HOME/.file"
+            ln -s "$(pwd)/$file" "$HOME/."$file""
         else
-	    cp "$(pwd)/${folders[i]}/.$file" "$HOME/"
+	    ln -s "$(pwd)/${folders[i]}/.$file" "$HOME/"
         fi
     else
         echo "$HOME/.$file does not exist"
 	echo "Setting Up $file..."
 	if [[ "$file" = "$trueline" ]]; then
-		cp -r "$(pwd)/$file" "$HOME/.$file"
+		ln -s "$(pwd)/$file" "$HOME/."$file""
 	else
-		cp "$(pwd)/${folders[i]}/.$file" "$HOME/"
+		ln -s "$(pwd)/${folders[i]}/.$file" "$HOME/"
 	fi
     fi
     ((i++))

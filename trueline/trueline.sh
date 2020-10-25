@@ -409,7 +409,8 @@ declare -A TRUELINE_COLORS_DEFAULT=(
     [red]='224;108;117'       #e06c75
     [special_grey]='59;64;72' #3b4048
     [white]='208;208;208'     #d0d0d0
-    [soft_red]='236;119;126'  #ec7788
+    [rose_pink]='236;180;240'  #ec7788
+    [soft_red]='190;120;190'
 )
 if [[ "${#TRUELINE_COLORS[@]}" -eq 0 ]]; then
     declare -A TRUELINE_COLORS=()
@@ -424,7 +425,7 @@ unset TRUELINE_COLORS_DEFAULT
 if [[ "${#TRUELINE_SEGMENTS[@]}" -eq 0 ]]; then
     declare -a TRUELINE_SEGMENTS=(
 	'conda_env,black,soft_red,bold'
-        'user,black,white,bold'
+        'user,black,rose_pink,bold'
         'venv,black,purple,bold'
         'git,grey,special_grey,normal'
         'working_dir,mono,cursor_grey,normal'

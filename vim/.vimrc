@@ -78,14 +78,37 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+" python specific settings
 set softtabstop=4
 set tabstop=8
 set expandtab
 set shiftwidth=4
 filetype indent on
-syntax on
 
 " ctrlp.vim settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+
+" onedark colorscheme
+packadd! onedark.vim
+colorscheme onedark
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"if (empty($TMUX))
+if (has("termguicolors"))
+  set termguicolors
+endif
+"endif
+
+
+" statusline colorscheme
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \ }
+
+if &term =~# '^screen'
+    let &t_8f = "\<ESC>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<ESC>[48;2;%lu;%lu;%lum"
+endif
