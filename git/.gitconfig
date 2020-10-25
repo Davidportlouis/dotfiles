@@ -1,7 +1,7 @@
 [user]
 	name = davidportlouis
 	email = dportlouis@gmail.com
-	signingkey = 09B1656508DC769E
+	signingKey = 4DAD1E4912D6AB4D
 [core]
 	editor = vim
 	excludesfile = /home/art3mis/.gitignore_global

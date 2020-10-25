@@ -90,10 +90,10 @@ filetype indent on
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-
-" onedark colorscheme
-packadd! onedark.vim
-colorscheme onedark
+if &term =~# '^screen'
+    let &t_8f = "\<ESC>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<ESC>[48;2;%lu;%lu;%lum"
+endif
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "if (empty($TMUX))
@@ -102,13 +102,12 @@ if (has("termguicolors"))
 endif
 "endif
 
+" onedark colorscheme
+packadd! onedark.vim
+colorscheme onedark
+
 
 " statusline colorscheme
 let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ }
-
-if &term =~# '^screen'
-    let &t_8f = "\<ESC>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<ESC>[48;2;%lu;%lu;%lum"
-endif
