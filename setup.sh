@@ -5,9 +5,6 @@ dir=$(pwd)
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install git tmux vim 
 cd "$HOME" || exit
-curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt install nodejs
 
 cd "$dir" || exit
 trueline="trueline"
